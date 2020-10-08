@@ -1,0 +1,36 @@
+Python:
+
+string=input(("Enter any input:"))
+if(string==string[::-1]):
+      print("The input data is a palindrome")
+else:
+      print("Not a palindrome")
+
+C#:
+
+using System;  
+namespace palindrome  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            string data,rdata="";  
+            Console.WriteLine(" Enter string");  
+            data = Console.ReadLine();  
+            for (int i = data.Length-1; i >=0; i--) //String Reverse  
+            {  
+                rdata += data[i].ToString();  
+            }  
+            if (rdata == data) // Checking whether string is palindrome or not  
+            {  
+                Console.WriteLine("The Data  is Palindrome ");  
+            }  
+            else  
+            {  
+                Console.WriteLine(" Not Palindrome ");  
+            }  
+            Console.ReadKey();  
+        }  
+    }  
+}
