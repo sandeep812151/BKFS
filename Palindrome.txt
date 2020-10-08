@@ -7,16 +7,13 @@ else:
       print("Not a palindrome")
 
 CPP:
-
 #include <iostream>
 #include <string.h>
-#include <bits/stdc++.h> 
 using namespace std;
 int main()
 {
-    string str1, str2;
-    int flag = 0, num, opt;
-    string data;
+    string str1;
+    int flag = 0, num, opt,len = 0;
     cout << "Enter option : 1 - Integer, 2 - String:";
     cin >> opt;
     if (opt == 1)
@@ -29,10 +26,13 @@ int main()
 	    cout << "Enter the string : ";
 	    cin >> str1;
     }	
-    str2 = str1;
-    reverse(str2.begin(), str2.end());
-    if(str1.compare(str2) != 0)
-        flag = 1;
+    len = str1.length(); 
+    for (int i = 0; i < len; i++)
+        if(str1.at(i) != str1.at(len-i-1))
+        {
+            flag = 1;
+            break;
+        }
     if (flag == 1)
         cout << str1 << " is not a palindrome";
     else
