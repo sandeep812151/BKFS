@@ -6,31 +6,36 @@ if(string==string[::-1]):
 else:
       print("Not a palindrome")
 
-C#:
+CPP:
 
-using System;  
-namespace palindrome  
-{  
-    class Program  
-    {  
-        static void Main(string[] args)  
-        {  
-            string data,rdata="";  
-            Console.WriteLine(" Enter string");  
-            data = Console.ReadLine();  
-            for (int i = data.Length-1; i >=0; i--) //String Reverse  
-            {  
-                rdata += data[i].ToString();  
-            }  
-            if (rdata == data) // Checking whether string is palindrome or not  
-            {  
-                Console.WriteLine("The Data  is Palindrome ");  
-            }  
-            else  
-            {  
-                Console.WriteLine(" Not Palindrome ");  
-            }  
-            Console.ReadKey();  
-        }  
-    }  
+#include <iostream>
+#include <string.h>
+#include <bits/stdc++.h> 
+using namespace std;
+int main()
+{
+    string str1, str2;
+    int flag = 0, num, opt;
+    string data;
+    cout << "Enter option : 1 - Integer, 2 - String:";
+    cin >> opt;
+    if (opt == 1)
+    {
+	    cin >> num;
+	    str1 = to_string(num);
+    }
+    else
+    {
+	    cout << "Enter the string : ";
+	    cin >> str1;
+    }	
+    str2 = str1;
+    reverse(str2.begin(), str2.end());
+    if(str1.compare(str2) != 0)
+        flag = 1;
+    if (flag == 1)
+        cout << str1 << " is not a palindrome";
+    else
+        cout << str1 << " is a palindrome";
+    return 0;
 }
