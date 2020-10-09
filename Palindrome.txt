@@ -13,6 +13,7 @@ using namespace std;
 int main()
 {
     string str1;
+    char charF,charL;
     int flag = 0, num, opt,len = 0;
     cout << "Enter option : 1 - Integer, 2 - String:";
     cin >> opt;
@@ -28,11 +29,17 @@ int main()
     }	
     len = str1.length(); 
     for (int i = 0; i < len; i++)
-        if(str1.at(i) != str1.at(len-i-1))
+    {
+        charF = str1.at(i) > 96 ? str1.at(i) -32 : str1.at(i);
+        charL = str1.at(len-i-1) > 96 ? str1.at(len-i-1) - 32 : str1.at(len-i-1);
+        if( charF != charL)
         {
             flag = 1;
             break;
         }
+        if(i > len /2 )
+            break;
+    }
     if (flag == 1)
         cout << str1 << " is not a palindrome";
     else
