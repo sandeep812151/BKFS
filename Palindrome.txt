@@ -1,7 +1,7 @@
 Python:
+string=input("Enter any input:")
 
-string=input(("Enter any input:"))
-if(string==string[::-1]):
+if(string.upper()==string[::-1].upper()):
       print("The input data is a palindrome")
 else:
       print("Not a palindrome")
